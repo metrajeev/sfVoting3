@@ -112,12 +112,15 @@ namespace VotingWeb.Controllers
         /// <summary>
         /// Constructs a reverse proxy URL for a given service.
         /// Example: http://localhost:19081/VotingApplication/VotingData/
+        /// //http://sfvotingapp.westus2.cloudapp.azure.com:
         /// </summary>
         /// <param name="serviceName"></param>
         /// <returns></returns>
         private Uri GetProxyAddress(Uri serviceName)
         {
-            return new Uri($"http://localhost:19081{serviceName.AbsolutePath}");
+            //return new Uri($"http://localhost:19081{serviceName.AbsolutePath}");
+            return new Uri($"http://sfvotingapp.westus2.cloudapp.azure.com:19081{serviceName.AbsolutePath}");
+
         }
 
         /// <summary>
